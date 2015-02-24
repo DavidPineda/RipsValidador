@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="Inicio"  description="">
+
+      <siteMapNode url="~/CargaArchivos/PagCargaArchivos.aspx" title="Carga De Archivos" description="Realiza la carga de archivos a la plataforma"></siteMapNode>
+      <siteMapNode url="~/CargaArchivos/ResultadoValidacion.aspx" title="Resultados Carga Archivos" description="Permite consultar el proceso de validación"></siteMapNode>
+
+      <siteMapNode url="~/Parametrizacion/ParametrizacionIndex.aspx" title="Parametrización" description="Parametrizar Aplicativo">
+        <siteMapNode url="~/Parametrizacion/FileSettings.aspx" title="Tipos de Archivos" description="Parametrice los archivos que se cargan">
+          <siteMapNode url="~/Parametrizacion/DependsFile.aspx" title="Archivos Dependientes" description="Parametrice archivos dependientes en carga"></siteMapNode>
+        </siteMapNode>
+        <siteMapNode url="~/Parametrizacion/FileStruct.aspx" title="Estrutura de Archivos" description="Parametrice la estructura interna de cada archivo"></siteMapNode>
+        <siteMapNode url="~/Parametrizacion/ColumnSettings.aspx" title="Ajuste de Variables" description="Parametrice la estructura de cada columna"></siteMapNode>
+        <siteMapNode url="~/Parametrizacion/DependsField.aspx" title="Ajuste Variables Dependientes" description="Parametrice las variables dependientes"></siteMapNode>
+        <siteMapNode url="~/Parametrizacion/DependFieldGroup.aspx" title="Cruces Campos Dependientes" description="Parametrice los grupos Dependientes"></siteMapNode>
+        <siteMapNode url="~/Parametrizacion/PagListCruceIdentificadorUsuario.aspx" title="Cruce de usuarios" description="Parametrice los cruces de usuario"></siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode url="~/Account/AccountIndex.aspx" title="Administración" description="Administre su Sistema">
+          <siteMapNode url="~/Account/Register.aspx" title="Crear Usuario"  description="Crea un usuario del sistema" ></siteMapNode>
+          <siteMapNode url="~/Account/DeleteUser.aspx" title="Eliminar Usuario" description="Permite borrar los datos de usuario en el sistema"></siteMapNode>
+          <siteMapNode url="~/Account/UpdateUser.aspx" title="Actualizar Usuario" description="Permite Actualizar algunos datos del usuario"></siteMapNode>
+      </siteMapNode>
+                   
+    </siteMapNode>
+</siteMap>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CB0B0E1-129B-4654-9B55-068140AAD880}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RipsValidadorDao</RootNamespace>
+    <AssemblyName>RipsValidadorDao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Telerik|AnyCPU'">
+    <OutputPath>bin\Telerik\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\RipsValidadorDao.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataLayer">
+      <HintPath>..\dll_publica\DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="EncriptarClaves">
+      <HintPath>..\dll_publica\EncriptarClaves.dll</HintPath>
+    </Reference>
+    <Reference Include="Sybase.Data.AseClient">
+      <HintPath>..\dll_publica\Sybase.Data.AseClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sybase.Data.AseClient.resources">
+      <HintPath>..\dll_publica\Sybase.Data.AseClient.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionDB\AutenticationProvider\Actualizar.cs" />
+    <Compile Include="ConnectionDB\AutenticationProvider\Borrar.cs" />
+    <Compile Include="ConnectionDB\AutenticationProvider\Consulta.cs" />
+    <Compile Include="ConnectionDB\AutenticationProvider\Insertar.cs" />
+    <Compile Include="ConnectionDB\Generales\Consulta.cs" />
+    <Compile Include="ConnectionDB\Generales\InsertUpdateDelete.cs" />
+    <Compile Include="Model\ArchivoCargado.cs" />
+    <Compile Include="Model\ArchivoDependiente.cs" />
+    <Compile Include="Model\ColumnaCruce.cs" />
+    <Compile Include="Model\CruceAfiliadoColumna.cs" />
+    <Compile Include="Model\DatosEstructuraArchivo.cs" />
+    <Compile Include="Model\EncabezadoGrupoVarDependiente.cs" />
+    <Compile Include="Model\EstadoArchivo.cs" />
+    <Compile Include="Model\CruceAfiliado.cs" />
+    <Compile Include="Model\EstadoProgramacion.cs" />
+    <Compile Include="Model\EstadoParametrizacion.cs" />
+    <Compile Include="Model\EstructuraArchivo.cs" />
+    <Compile Include="Model\ExtensionArchivo.cs" />
+    <Compile Include="Model\ExtensionXarchivo.cs" />
+    <Compile Include="Model\FormatoFecha.cs" />
+    <Compile Include="Model\DetalleGrupoDependiente.cs" />
+    <Compile Include="Model\ParametrizacionArchivo.cs" />
+    <Compile Include="Model\ProgramacionArchivo.cs" />
+    <Compile Include="Model\Regional.cs" />
+    <Compile Include="Model\ResultadoValidacion.cs" />
+    <Compile Include="Model\ResultadoValidacionDetalle.cs" />
+    <Compile Include="Model\TipoComparacion.cs" />
+    <Compile Include="Model\TipoContrato.cs" />
+    <Compile Include="Model\TipoDato.cs" />
+    <Compile Include="Model\TipoValor.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\VariableDependiente.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

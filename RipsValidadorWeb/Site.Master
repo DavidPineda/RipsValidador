@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RipsValidadorWeb.SiteMaster"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <script src="../Scripts/AcercaDe.js" type="text/javascript"></script>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%--<asp:SiteMapDataSource ID="MySiteMap" runat="server" SiteMapProvider="WebSitemap"/>--%>
+    <telerik:RadSiteMapDataSource ID="MySiteMap" runat="server" SiteMapProvider="WebSitemap" ShowStartingNode="false"/>
+    <form runat="server">
+    <telerik:RadSkinManager ID="RadSkinManager1" Runat="server" Skin="Metro">
+    </telerik:RadSkinManager>
+    <telerik:RadScriptManager ID="RadScriptManager1" Runat="server" EnablePageMethods="true">
+    </telerik:RadScriptManager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    INTEGR@ RIPS
+                </h1>
+            </div>
+            <div id="acercaDe">
+                <h1>
+                    Acerca De Integr@ Rips
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <LoggedInTemplate>
+                        Bienvenido <span class="bold"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Account/ChangePassword.aspx" ><asp:LoginName ID="HeadLoginName" runat="server" /></asp:HyperLink></span>!
+                        [ 
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/Account/Login.aspx"/>
+                        ]
+                    </LoggedInTemplate>
+                    <AnonymousTemplate>
+                        <asp:HyperLink ID="Iniciar_sesión" runat="server" NavigateUrl="~/Account/Login.aspx" Text="Iniciar Sesion"></asp:HyperLink>
+                    </AnonymousTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+<%--               <asp:Menu ID="Menu1" runat="server" CssClass="menu"  EnableViewState="False" 
+                    IncludeStyleBlock="False" StaticDisplayLevels="2" Orientation="Horizontal" 
+                    DataSourceID="MySiteMap" StaticSubMenuIndent="16px">                 
+                </asp:Menu>--%>
+                <telerik:RadMenu ID="Menu1" runat="server" DataSourceID="MySiteMap" EnableEmbeddedSkins="false" CssClass="menu" ></telerik:RadMenu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+            <asp:Image ID="Image1" runat="server" Height="50px" Width="100%" />
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

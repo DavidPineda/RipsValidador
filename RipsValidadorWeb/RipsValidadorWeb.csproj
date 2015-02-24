@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1ABC4472-56C5-4597-88BE-34EAB96270F3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RipsValidadorWeb</RootNamespace>
+    <AssemblyName>RipsValidadorWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Telerik|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\RipsValidadorWeb.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\dll_publica\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AJAXExtensionsToolbox">
+      <HintPath>..\dll_publica\AJAXExtensionsToolbox.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxPro.2">
+      <HintPath>..\dll_publica\AjaxPro.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EncriptarClaves">
+      <HintPath>..\dll_publica\EncriptarClaves.dll</HintPath>
+    </Reference>
+    <Reference Include="ErrorsLog">
+      <HintPath>..\dll_publica\ErrorsLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RegularExpresion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll_publica\RegularExpresion.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Telerik.Web.UI, Version=2014.2.618.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>..\dll_publica\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AccountIndex.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\DeleteUser.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\RecoverPassword.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\UpdateUser.aspx" />
+    <Content Include="Account\Version.html" />
+    <Content Include="CargaArchivos\PagCargaArchivos.aspx" />
+    <Content Include="CargaArchivos\ResultadoValidacion.aspx" />
+    <Content Include="CargaArchivos\ResultadoValidacionArchivos.aspx" />
+    <Content Include="CargaArchivos\ResultadoValidacionArchivosDetalle.aspx" />
+    <Content Include="Images\buscar.ico" />
+    <Content Include="Images\detalles.ico" />
+    <Content Include="Images\download.ico" />
+    <Content Include="Images\editar.ico" />
+    <Content Include="Images\eliminar.ico" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\Logos\logoEmpresa.JPG" />
+    <Content Include="Images\Logos\LogoQdata.jpg" />
+    <Content Include="Images\Logos\logoVersion.JPG" />
+    <Content Include="Images\question.png" />
+    <Content Include="Images\warning.png" />
+    <Content Include="Parametrizacion\ColumnSettings.aspx" />
+    <Content Include="Parametrizacion\DependFieldDetails.aspx" />
+    <Content Include="Parametrizacion\DependFieldGroup.aspx" />
+    <Content Include="Parametrizacion\DependsField.aspx" />
+    <Content Include="Parametrizacion\DependsFile.aspx" />
+    <Content Include="Parametrizacion\ExtensionForFile.aspx" />
+    <Content Include="Parametrizacion\FileSettings.aspx" />
+    <Content Include="Parametrizacion\FileStruct.aspx" />
+    <Content Include="Parametrizacion\PagEditCruceIdentificadorUsuario.aspx" />
+    <Content Include="Parametrizacion\PagListCruceIdentificadorUsuario.aspx" />
+    <Content Include="Parametrizacion\ParametrizacionIndex.aspx" />
+    <Content Include="Scripts\AcercaDe.js" />
+    <Content Include="Styles\AcercaDe.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="UserControls\CruceAfiliado.ascx" />
+    <Content Include="UserControls\CruceAfiliadoDet.ascx" />
+    <Content Include="UserControls\DataStructFile.ascx" />
+    <Content Include="UserControls\ErrorMessage.ascx" />
+    <Content Include="UserControls\ExtensionAdd.ascx" />
+    <Content Include="UserControls\GroupField.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\AccountIndex.aspx.cs">
+      <DependentUpon>AccountIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AccountIndex.aspx.designer.cs">
+      <DependentUpon>AccountIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\DeleteUser.aspx.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\DeleteUser.aspx.designer.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RadAsyncUpload.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadAsyncUpload.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RadAsyncUpload.es-CO.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadAsyncUpload.es-CO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RadGrid.Main.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadGrid.Main.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RadGrid.Main.es-CO.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadGrid.Main.es-CO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaArchivos\PagCargaArchivos.aspx.cs">
+      <DependentUpon>PagCargaArchivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaArchivos\PagCargaArchivos.aspx.designer.cs">
+      <DependentUpon>PagCargaArchivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaArchivos\ResultadoValidacion.aspx.cs">
+      <DependentUpon>ResultadoValidacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaArchivos\ResultadoValidacion.aspx.designer.cs">
+      <DependentUpon>ResultadoValidacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaArchivos\ResultadoValidacionArchivos.aspx.cs">
+      <DependentUpon>ResultadoValidacionArchivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaArchivos\ResultadoValidacionArchivos.aspx.designer.cs">
+      <DependentUpon>ResultadoValidacionArchivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaArchivos\ResultadoValidacionArchivosDetalle.aspx.cs">
+      <DependentUpon>ResultadoValidacionArchivosDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaArchivos\ResultadoValidacionArchivosDetalle.aspx.designer.cs">
+      <DependentUpon>ResultadoValidacionArchivosDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Logger.cs" />
+    <Compile Include="Clases\Utilities.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enumeradores\TipoDato.cs" />
+    <Compile Include="Enumeradores\TipoDeArchivo.cs" />
+    <Compile Include="Enumeradores\TypeMessage.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\ColumnSettings.aspx.cs">
+      <DependentUpon>ColumnSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\ColumnSettings.aspx.designer.cs">
+      <DependentUpon>ColumnSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\DependFieldDetails.aspx.cs">
+      <DependentUpon>DependFieldDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\DependFieldDetails.aspx.designer.cs">
+      <DependentUpon>DependFieldDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\DependFieldGroup.aspx.cs">
+      <DependentUpon>DependFieldGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\DependFieldGroup.aspx.designer.cs">
+      <DependentUpon>DependFieldGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\DependsField.aspx.cs">
+      <DependentUpon>DependsField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\DependsField.aspx.designer.cs">
+      <DependentUpon>DependsField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\DependsFile.aspx.cs">
+      <DependentUpon>DependsFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\DependsFile.aspx.designer.cs">
+      <DependentUpon>DependsFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\ExtensionForFile.aspx.cs">
+      <DependentUpon>ExtensionForFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\ExtensionForFile.aspx.designer.cs">
+      <DependentUpon>ExtensionForFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\FileSettings.aspx.cs">
+      <DependentUpon>FileSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\FileSettings.aspx.designer.cs">
+      <DependentUpon>FileSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\FileStruct.aspx.cs">
+      <DependentUpon>FileStruct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\FileStruct.aspx.designer.cs">
+      <DependentUpon>FileStruct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\PagEditCruceIdentificadorUsuario.aspx.cs">
+      <DependentUpon>PagEditCruceIdentificadorUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\PagEditCruceIdentificadorUsuario.aspx.designer.cs">
+      <DependentUpon>PagEditCruceIdentificadorUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\PagListCruceIdentificadorUsuario.aspx.cs">
+      <DependentUpon>PagListCruceIdentificadorUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\PagListCruceIdentificadorUsuario.aspx.designer.cs">
+      <DependentUpon>PagListCruceIdentificadorUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametrizacion\ParametrizacionIndex.aspx.cs">
+      <DependentUpon>ParametrizacionIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parametrizacion\ParametrizacionIndex.aspx.designer.cs">
+      <DependentUpon>ParametrizacionIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CruceAfiliado.ascx.cs">
+      <DependentUpon>CruceAfiliado.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CruceAfiliado.ascx.designer.cs">
+      <DependentUpon>CruceAfiliado.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CruceAfiliadoDet.ascx.cs">
+      <DependentUpon>CruceAfiliadoDet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CruceAfiliadoDet.ascx.designer.cs">
+      <DependentUpon>CruceAfiliadoDet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DataStructFile.ascx.cs">
+      <DependentUpon>DataStructFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DataStructFile.ascx.designer.cs">
+      <DependentUpon>DataStructFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ErrorMessage.ascx.cs">
+      <DependentUpon>ErrorMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ErrorMessage.ascx.designer.cs">
+      <DependentUpon>ErrorMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ExtensionAdd.ascx.cs">
+      <DependentUpon>ExtensionAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ExtensionAdd.ascx.designer.cs">
+      <DependentUpon>ExtensionAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GroupField.ascx.cs">
+      <DependentUpon>GroupField.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GroupField.ascx.designer.cs">
+      <DependentUpon>GroupField.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlesAsp\ControlesAsp.csproj">
+      <Project>{A25687A8-89A7-4CA1-9DA0-6D7EC42F30C8}</Project>
+      <Name>ControlesAsp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MailManaged\MailManaged.csproj">
+      <Project>{8724A45F-8A46-4E4F-BB9C-F087C29EF2A4}</Project>
+      <Name>MailManaged</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAutenticationProvider\MyAutenticationProvider.csproj">
+      <Project>{8E3CDCE3-2586-4254-8BA5-BA9CC44A40DA}</Project>
+      <Name>MyAutenticationProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RipsValidadorDao\RipsValidadorDao.csproj">
+      <Project>{3CB0B0E1-129B-4654-9B55-068140AAD880}</Project>
+      <Name>RipsValidadorDao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Parametrizacion\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CargaArchivos\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\RadAsyncUpload.es-CO.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadAsyncUpload.es-CO.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RadAsyncUpload.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadAsyncUpload.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RadGrid.Main.es-CO.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadGrid.Main.es-CO.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RadGrid.Main.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadGrid.Main.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\IntegraRips.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1218</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
