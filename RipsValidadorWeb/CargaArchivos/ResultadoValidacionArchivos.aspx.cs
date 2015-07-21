@@ -80,6 +80,11 @@ namespace RipsValidadorWeb.CargaArchivos
                 HttpContext.Current.ApplicationInstance.CompleteRequest();
             }
         }
+
+        protected void btnAtras_Click(object sender, EventArgs e)
+        {
+            retornar();
+        }
         #endregion
 
         #region "Metodos"
@@ -130,7 +135,13 @@ namespace RipsValidadorWeb.CargaArchivos
             }
         }
 
-        #endregion
+        private void retornar()
+        {
+            Response.Redirect("ResultadoValidacion.aspx");
+            HttpContext.Current.ApplicationInstance.CompleteRequest();
+        }
+
+        #endregion     
 
     }
 }

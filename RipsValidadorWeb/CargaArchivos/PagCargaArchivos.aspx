@@ -1,22 +1,53 @@
 ﻿<%@ Page Title="Carga De Archivos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PagCargaArchivos.aspx.cs" 
     Inherits="RipsValidadorWeb.CargaArchivos.PagCargaArchivos" MaintainScrollPositionOnPostback="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script type="text/javascript" id="telerikClientEvents1">
-//<![CDATA[
-        function RadAsyncUpload1_ValidationFailed(sender, args) {
-            alert("Error, la extension del archivo es incorrecta, o se supero el maximo de MB");
-        }
-//]]>
-</script>
-<script type="text/javascript" id="telerikClientEvents2">
-//<![CDATA[
 
-        function RadAsyncUpload1_FileUploadFailed(sender, args) {
-            alert("Fallo el proceso de cargue del archivo.");
-            var boton2 = document.getElementById("<%=btnProgramar.ClientID%>");
-            boton2.disabled = true;
+<script src="../Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    filesWithError = 0;
+
+    function OnClientFileSelected(sender, args) {
+        var RegExPattern = "^(AF|AP|AC|AM|AT|US|AN|AH|AU|CT)[0-9]{1,6}.TXT$";
+        var currentFileName = args.get_fileName().toUpperCase();
+        var row = args.get_row();
+        var index = args.get_rowIndex();
+        var upload = $find("<%=MyRadAsyncUpload.ClientID %>");
+        if (!currentFileName.match(RegExPattern)) {
+            row.className = "ruError";
+            $("#" + row.id + " span span").addClass("ruUploadProgress ruUploadFailure");
+            filesWithError = filesWithError + 1;
+        }        
+    }
+
+    function OnClientFilesUploaded(sender) {
+        if (filesWithError > 0) {
+            var button2 = $find("<%=btnProgramar.ClientID%>");
+            button2.set_enabled(false);
         }
-        //]]>
+    }
+
+    function OnClientFileUploadRemoved(sender, args) {
+        var RegExPattern = "^(AF|AP|AC|AM|AT|US|AN|AH|AU|CT)[0-9]{1,6}.TXT$";
+        var currentFileName = args.get_fileName().toUpperCase();
+        if (!currentFileName.match(RegExPattern)) {
+            filesWithError = filesWithError - 1;
+        }
+        if (filesWithError <= 0) {
+            var button2 = $find("<%=btnProgramar.ClientID%>");
+            button2.set_enabled(true);
+        }
+    }
+
+    function RadAsyncUpload1_FileUploadFailed(sender, args) {
+        alert("Fallo el proceso de cargue del archivo.");
+        var button2 = $find("<%=btnProgramar.ClientID%>");
+            button2.set_enabled(false);
+    }
+
+    function RadAsyncUpload1_ValidationFailed(sender, args) {
+        alert("Error, la extension del archivo es incorrecta, o se supero el maximo de MB");
+    }
 </script>
 
     <style type="text/css">
@@ -130,6 +161,9 @@ td.rcButtons input
                         <telerik:RadAsyncUpload runat="server" ID="MyRadAsyncUpload"
                             onclientvalidationfailed="RadAsyncUpload1_ValidationFailed" 
                             onclientfileuploadfailed="RadAsyncUpload1_FileUploadFailed" 
+                            OnClientFileSelected="OnClientFileSelected"
+                            OnClientFilesUploaded="OnClientFilesUploaded"
+                            OnClientFileUploadRemoved="OnClientFileUploadRemoved"
                             MultipleFileSelection="Automatic"
                             Width="100%" Culture="es-CO">
                         </telerik:RadAsyncUpload>

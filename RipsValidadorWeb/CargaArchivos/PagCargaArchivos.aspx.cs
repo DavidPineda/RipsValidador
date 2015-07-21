@@ -498,5 +498,18 @@ namespace RipsValidadorWeb.CargaArchivos
             }
         }
         #endregion
+
+        protected void MyRadAsyncUpload_FileUploaded(object sender, FileUploadedEventArgs e)
+        {
+            System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex("^(AF|AP|AC|AM|AT|US|AN|AH|AU|CT)[0-9]{1,6}.TXT$");
+            if (r.IsMatch(e.File.FileName.ToUpper()))
+            {
+                string s = string.Empty;
+            }
+            else
+            {
+                string s = string.Empty;
+            }
+        }
     }
 }

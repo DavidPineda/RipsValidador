@@ -94,5 +94,8 @@
             </MasterTableView>
         </telerik:RadGrid> 
     </div>
+    <div style="margin:10px 50px 0 0; width:10%; text-align:right; float:right">
+        <telerik:RadButton runat="server" ID="btnAtras" Text="Atras" OnClick="btnAtras_Click"></telerik:RadButton>
+    </div>
     <telerik:RadWindowManager runat="server" ID="RadWindowManager1"></telerik:RadWindowManager>
 </asp:Content>
